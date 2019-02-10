@@ -11,6 +11,10 @@ import { Icon } from 'react-native-elements';
 
 export default class BookcaseItem extends Component {
 
+  _onEditBook = () => {
+      let id = this.props.id;
+    }
+
   render() {
       return(
           <TouchableOpacity

@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
-import FetchLocator from "../components/FetchLocator";
-import LocatorMap from "../components/LocatorMap";
+import FetchLocator from "../components/Locator/FetchLocator";
+import LocatorMap from "../components/Locator/LocatorMap";
 import { Actions } from "react-native-router-flux";
 
 export default class BookMap extends Component {
@@ -20,6 +20,15 @@ export default class BookMap extends Component {
             longitudeDelta: 0.0421
           }
         });
+        fetch('https://bloggiedos.firebaseio.com/places.json', {
+          method: 'POST',
+          body: JSON.stringify({
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude
+          })
+        })
+        .then(res => console.log(res))
+        .catch(err => console.log(err));
       },
       err => console.log(err)
     );

@@ -2,12 +2,12 @@ import React, {Component} from 'react';
 import {Dimensions, StyleSheet, Platform} from 'react-native';
 import { Icon } from 'react-native-vector-icons/FontAwesome';
 import { Scene, Router, Actions, Reducer, DrawerMenu, Drawer, Tabs, Modal } from 'react-native-router-flux';
-import Bookcase from './screens/Bookcase';
-import AddBook from './screens/AddBook';
-import Lists from './screens/Lists';
-import Profile from './screens/Profile';
-import BookMap from './screens/Explore';
-import BookLocator from './screens/EditBook';
+import Bookcase from '../screens/Bookcase';
+import AddBook from '../screens/AddBook/AddBook';
+import Lists from '../screens/Lists';
+import Profile from '../screens/Profile';
+import BookMap from '../screens/Explore';
+import BookLocator from '../screens/EditBook';
 
 let screen = Dimensions.get('window');
 
@@ -32,8 +32,8 @@ const scenes = Actions.create(
             title="The Bookend"
             />
           <Scene key="bookmap" component={BookMap} title="Book Map" />
-          <Scene key="addbook" component={AddBook} title="Add a Book" />
-          <Scene key="profile" component={Profile} title="Profile" />
+          <Scene key="addbook" component={AddBook} title="Add a Book" style={{marginTop:0}}/>
+          <Scene key="profile" component={Profile} title="Create Profile" />
         </Scene>
       <Scene key="booklocator" component={BookLocator} title="Book Locator" />
   </Scene>

@@ -56,7 +56,7 @@ export default class Bookcase extends Component {
     render() {
     return (
       <View style={styles.container}>
-      <Text style={styles.titleText} >Here are the classics Amazon can't find.</Text>
+      <Text style={styles.titleText} >Classics you won't find on Amazon.</Text>
       <StatusBar
           barStyle="light-content"
         />
